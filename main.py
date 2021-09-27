@@ -15,7 +15,7 @@ app = FastAPI(
 
 @app.get("/")
 async def root():
-    return "Welcome User !!1"
+    return "Welcome User !!"
 
 
 @app.post("/uploadfile/")
