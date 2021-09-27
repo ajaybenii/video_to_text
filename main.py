@@ -1,11 +1,12 @@
-from typing import List
-
-from fastapi import FastAPI, File, UploadFile , HTTPException
-from fastapi.responses import HTMLResponse
-import speech_recognition as sr 
-import moviepy.editor as mp
-import requests
 import io
+import requests
+
+import speech_recognition as sr 
+from fastapi import FastAPI, File, UploadFile , HTTPException
+
+from fastapi.responses import HTMLResponse
+import moviepy.editor as mp
+
 app = FastAPI(
     title="convert video voice to text",
     description="upload the video and get the text in response file (duration of video is not more than 2 min)",
