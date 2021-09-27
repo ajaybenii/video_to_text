@@ -7,19 +7,19 @@ import moviepy.editor as mp
 import requests
 import io
 app = FastAPI(
-    title="convert voice to text",
+    title="convert video voice to text",
     description="upload the video and get the text in response file (duration of video is not more than 2 min)",
     version="1.0",
 )
 
 
-@app.post("/files/")
-async def create_files(files: List[bytes] = File(...)):
-    return {"file_sizes": [len(file) for file in files]}
+@app.get("/")
+async def root():
+    return "Welcome User !!1"
 
 
 @app.post("/uploadfile/")
-async def create_upload_file(file: UploadFile = File(...)):
+async def upload_video_file(file: UploadFile = File(...)):
     try:    # response = requests.get(URL)
         path = (file.filename)
         clip = mp.VideoFileClip(path) 
